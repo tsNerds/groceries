@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { GroceryModel } from '../grocery/grocery.model';
+import { GroceryComponent } from '../grocery/';
+import { GroceriesService } from '../groceries.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-grocery-list',
   templateUrl: 'grocery-list.component.html',
-  styleUrls: ['grocery-list.component.css']
+  styleUrls: ['grocery-list.component.css'],
+  directives: [GroceryComponent],
+  providers: [GroceriesService]
 })
 export class GroceryListComponent implements OnInit {
-  groceries:string[];
+  groceries:GroceryModel[];
 
-  constructor() {
-    this.groceries = 'apples beer bread shaworma'.split(' ');
+  constructor(groceriesService:GroceriesService) {
+    this.groceries = groceriesService.getGroceries();
+    // console.log(groceriesService);
   }
 
   ngOnInit() {
