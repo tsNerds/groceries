@@ -6,6 +6,7 @@ It's basically a to-do app, but with a different name!
 Basic steps to follow:  
 
 1. **bootstrap angular 2 app**  - branch [step-1](https://github.com/tsNerds/grocery-list/tree/step-1)
+    - implement the main component: `grocery-list-app.component.ts`
     - we recommend using the [angular-cli](https://cli.angular.io/) because it's awesome  
     - ...but you can use anything you like (you can even run your app in a plunkr: http://plnkr.co/edit/ZybOUleel4YOLjRRrOO5?p=preview)  
 2. **implement a grocery list component**  
