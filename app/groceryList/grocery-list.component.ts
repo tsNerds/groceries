@@ -12,7 +12,13 @@ import { GroceryDataProvider } from './groceryData/grocery-data.provider'
 })
 export class GroceryList {
     private list:Array<any> = [];
+    private itemData:string;
     constructor(private groceryData:GroceryDataProvider) {
         this.list = groceryData.getData();
+    }
+
+    addItem() {
+        this.groceryData.addItem(this.itemData);
+        this.itemData = '';
     }
 }

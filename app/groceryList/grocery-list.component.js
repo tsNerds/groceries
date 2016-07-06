@@ -17,6 +17,10 @@ var GroceryList = (function () {
         this.list = [];
         this.list = groceryData.getData();
     }
+    GroceryList.prototype.addItem = function () {
+        this.groceryData.addItem(this.itemData);
+        this.itemData = '';
+    };
     GroceryList = __decorate([
         core_1.Component({
             moduleId: module.id,

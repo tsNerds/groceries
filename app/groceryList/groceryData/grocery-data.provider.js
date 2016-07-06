@@ -21,8 +21,8 @@ var GroceryDataProvider = (function () {
     GroceryDataProvider.prototype.getData = function () {
         return this.list;
     };
-    GroceryDataProvider.prototype.addItem = function (id, data) {
-        this.list.push({ id: id, data: data });
+    GroceryDataProvider.prototype.addItem = function (data) {
+        this.list.push({ id: this.list.length + 1, data: data });
     };
     GroceryDataProvider.prototype.removeItem = function () {
     };

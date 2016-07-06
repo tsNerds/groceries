@@ -12,8 +12,8 @@ export class GroceryDataProvider {
         return this.list;
     }
 
-    addItem(id, data) {
-        this.list.push({id: id, data: data});
+    addItem(data) {
+        this.list.push({id: this.list.length + 1, data: data});
     }
 
     removeItem() {

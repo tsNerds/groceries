@@ -2,4 +2,9 @@
     <li *ngFor="let itemData of list">
         <grocery-item [item]="itemData"></grocery-item>
     </li>
+    
+    <div>
+        <input type="text" [(ngModel)]="itemData">
+        <button (click)="addItem()">ADD</button>
+    </div>
 </ul>
