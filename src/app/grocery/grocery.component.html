@@ -1,4 +1,3 @@
-<p>
-  {{grocery.name}}
-  <span *ngIf="grocery.price"> ...and it costs about {{grocery.price}}$</span>
-</p>
+{{grocery.name}}
+<span *ngIf="grocery.price"> ...and it costs about {{grocery.price}}$</span>
+<span *ngIf="!grocery.price"> ...priceles</span>

@@ -1,0 +1,20 @@
+li {
+    position: relative;
+    width: 300px;
+    list-style: none;
+}
+
+li:hover .delete-grocery:after {
+    opacity: 1;
+}
+
+.delete-grocery {
+    float: right;
+}
+
+.delete-grocery:after {
+    content: "delete";
+    color: red;
+    cursor: pointer;
+    opacity: .25;
+}

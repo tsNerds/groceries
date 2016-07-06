@@ -23,4 +23,11 @@ export class GroceriesService {
     this.groceries.splice(0, 0, new GroceryModel(groceryName, groceryPrice));
   }
 
+  removeGrocery(grocery:GroceryModel):void {
+    let index = this.groceries.indexOf(grocery);
+    if (index !== -1) {
+      this.groceries.splice(index, 1);
+    }
+  }
+
 }

@@ -24,4 +24,8 @@ export class GroceriesAppComponent {
   addGrocery(groceryName:string):void {
     this.groceriesService.addGrocery(groceryName);
   }
+
+  removeGrocery($event):void {
+    this.groceriesService.removeGrocery($event.grocery);
+  }
 }

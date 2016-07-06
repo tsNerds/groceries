@@ -4,5 +4,8 @@
 <input 
   #newGrocery 
   (keyup.enter)="addGrocery(newGrocery.value); newGrocery.value='';" 
-  placeholder="Somehting to get from the store?">
-<app-grocery-list [groceries]="groceries"></app-grocery-list>
+  placeholder="🔍 Somehting you need to get from the store?">
+<app-grocery-list 
+  [groceries]="groceries"
+  (removeGroceryIntent)="removeGrocery($event)">
+</app-grocery-list>

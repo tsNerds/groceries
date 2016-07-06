@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { GroceryComponent, GroceryModel } from '../grocery/';
 
 @Component({
@@ -9,5 +9,15 @@ import { GroceryComponent, GroceryModel } from '../grocery/';
   directives: [GroceryComponent]
 })
 export class GroceryListComponent {
-  @Input() groceries: GroceryModel[];
+  @Input()
+  groceries: GroceryModel[];
+
+  @Output() 
+  removeGroceryIntent = new EventEmitter();
+
+  removeGrocery(grocery:GroceryModel):void {
+    this.removeGroceryIntent.emit({
+      grocery: grocery
+    });
+  }
 }
