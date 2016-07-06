@@ -10,23 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var index_1 = require('./groceryItem/index');
+var grocery_data_provider_1 = require('./groceryData/grocery-data.provider');
 var GroceryList = (function () {
-    function GroceryList() {
-        this.list = [
-            { id: 1, data: 'something1' },
-            { id: 2, data: 'something2' },
-            { id: 3, data: 'something3' },
-            { id: 4, data: 'something4' }
-        ];
+    function GroceryList(groceryData) {
+        this.groceryData = groceryData;
+        this.list = [];
+        this.list = groceryData.getData();
     }
     GroceryList = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'grocery-list',
             templateUrl: './grocery-list.html',
-            directives: [index_1.GroceryItem]
+            directives: [index_1.GroceryItem],
+            providers: [grocery_data_provider_1.GroceryDataProvider]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [grocery_data_provider_1.GroceryDataProvider])
     ], GroceryList);
     return GroceryList;
 }());
