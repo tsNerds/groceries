@@ -8,9 +8,9 @@ export class GroceriesService {
   constructor() {
     this.groceries = [
       new GroceryModel('apples', 3),
-      new GroceryModel('beer', 2),
+      new GroceryModel('beer', 2, true),
       new GroceryModel('bread'),
-      new GroceryModel('shaworma', 15),
+      new GroceryModel('shaworma', 15, true),
     ];
   }
 
@@ -18,9 +18,9 @@ export class GroceriesService {
     return this.groceries;
   }
 
-  addGrocery(groceryName:string, groceryPrice?:number):void {
+  addGrocery(groceryName:string, groceryPrice?:number, selected:boolean=false):void {
     // add the new grocery to the top of the list
-    this.groceries.splice(0, 0, new GroceryModel(groceryName, groceryPrice));
+    this.groceries.splice(0, 0, new GroceryModel(groceryName, groceryPrice, selected));
   }
 
   removeGrocery(grocery:GroceryModel):void {
@@ -28,6 +28,10 @@ export class GroceriesService {
     if (index !== -1) {
       this.groceries.splice(index, 1);
     }
+  }
+  
+  toggleGroceryState(grocery:GroceryModel):void {
+    grocery.selected = !grocery.selected;
   }
 
 }

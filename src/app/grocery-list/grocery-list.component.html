@@ -1,9 +1,12 @@
 <ul>
-  <li *ngFor="let grocery of groceries">
+  <li *ngFor="let grocery of groceries" 
+      [class.selected]="grocery.selected">
     <span 
-      class="delete-grocery" 
-      (click)="removeGrocery(grocery)">
-    </span>
+      class="grocery-action delete-grocery" 
+      (click)="removeGrocery(grocery)"></span>
+    <span 
+      class="grocery-action toggle-grocery" 
+      (click)="toggleGroceryState(grocery)"></span>
     <app-grocery [grocery]="grocery"></app-grocery>
   </li>
 </ul>

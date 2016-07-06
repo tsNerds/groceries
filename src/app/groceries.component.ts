@@ -28,4 +28,8 @@ export class GroceriesAppComponent {
   removeGrocery($event):void {
     this.groceriesService.removeGrocery($event.grocery);
   }
+
+  toggleGrocery($event):void {
+    this.groceriesService.toggleGroceryState($event.grocery);
+  }
 }

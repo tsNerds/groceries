@@ -7,5 +7,6 @@
   placeholder="🔍 Somehting you need to get from the store?">
 <app-grocery-list 
   [groceries]="groceries"
-  (removeGroceryIntent)="removeGrocery($event)">
+  (removeGroceryIntent)="removeGrocery($event)"
+  (toggleGroceryIntent)="toggleGrocery($event)">
 </app-grocery-list>
