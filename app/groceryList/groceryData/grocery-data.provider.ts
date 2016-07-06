@@ -12,11 +12,11 @@ export class GroceryDataProvider {
         return this.list;
     }
 
-    addItem(data) {
+    addItem(data:string) {
         this.list.push({id: this.list.length + 1, data: data});
     }
 
-    removeItem() {
+    removeItem(id:number) {
 
     }
 }

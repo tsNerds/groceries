@@ -24,7 +24,7 @@ var GroceryDataProvider = (function () {
     GroceryDataProvider.prototype.addItem = function (data) {
         this.list.push({ id: this.list.length + 1, data: data });
     };
-    GroceryDataProvider.prototype.removeItem = function () {
+    GroceryDataProvider.prototype.removeItem = function (id) {
     };
     GroceryDataProvider = __decorate([
         core_1.Injectable(), 
