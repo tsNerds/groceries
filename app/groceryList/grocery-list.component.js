@@ -21,6 +21,10 @@ var GroceryList = (function () {
         this.groceryData.addItem(this.itemData);
         this.itemData = '';
     };
+    GroceryList.prototype.itemRequestedRemove = function (event) {
+        console.log(event);
+        this.groceryData.removeItem(event.id);
+    };
     GroceryList = __decorate([
         core_1.Component({
             moduleId: module.id,

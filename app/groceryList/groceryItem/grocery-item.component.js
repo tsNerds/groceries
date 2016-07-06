@@ -11,16 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var GroceryItem = (function () {
     function GroceryItem() {
+        this.removeItemRequest = new core_1.EventEmitter();
     }
+    GroceryItem.prototype.clickedRemove = function () {
+        this.removeItemRequest.emit({
+            id: this.item.id
+        });
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
     ], GroceryItem.prototype, "item", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], GroceryItem.prototype, "removeItemRequest", void 0);
     GroceryItem = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'grocery-item',
-            template: '{{item.id}} {{item.data}}'
+            templateUrl: './grocery-item.html'
         }), 
         __metadata('design:paramtypes', [])
     ], GroceryItem);

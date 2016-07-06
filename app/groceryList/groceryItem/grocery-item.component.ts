@@ -1,11 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     moduleId: module.id,
     selector: 'grocery-item',
-    template: '{{item.id}} {{item.data}}'
+    templateUrl: './grocery-item.html'
 })
 
 export class GroceryItem {
     @Input() item:any;
+    @Output() removeItemRequest = new EventEmitter();
+
+    clickedRemove() {
+        this.removeItemRequest.emit({
+            id: this.item.id
+        });
+    }
 }

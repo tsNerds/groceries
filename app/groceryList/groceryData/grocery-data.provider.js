@@ -20,6 +20,22 @@ var GroceryDataProvider = (function () {
         this.list.push({ id: this.list.length + 1, data: data });
     };
     GroceryDataProvider.prototype.removeItem = function (id) {
+        var index = this.findItem(id);
+        if (index >= 0) {
+            this.list.splice(index, 1);
+            console.log('item removed!');
+        }
+        else {
+            console.error('Could not locate item!', id);
+        }
+    };
+    GroceryDataProvider.prototype.findItem = function (id) {
+        for (var i = 0; i < this.list.length; i++) {
+            if (this.list[i].id === id) {
+                return i;
+            }
+        }
+        return -1;
     };
     GroceryDataProvider = __decorate([
         core_1.Injectable(), 

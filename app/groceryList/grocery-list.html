@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let itemData of list">
-        <grocery-item [item]="itemData"></grocery-item>
+        <grocery-item (removeItemRequest)="itemRequestedRemove($event)" [item]="itemData"></grocery-item>
     </li>
     
     <div>

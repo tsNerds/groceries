@@ -21,4 +21,9 @@ export class GroceryList {
         this.groceryData.addItem(this.itemData);
         this.itemData = '';
     }
+
+    itemRequestedRemove(event) {
+        console.log(event);
+        this.groceryData.removeItem(event.id);
+    }
 }
