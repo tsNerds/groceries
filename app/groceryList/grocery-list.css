@@ -1,0 +1,9 @@
+input {
+    background: #fcfcfc, 100%;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #c3c3c3;
+    padding: 5px;
+    font-style: italic;
+    font-family: cursive;
+}

@@ -1,10 +1,10 @@
-<ul>
-    <li *ngFor="let itemData of list">
-        <grocery-item (removeItemRequest)="itemRequestedRemove($event)" [item]="itemData"></grocery-item>
-    </li>
-    
+<ul style="list-style-type:none">
     <div>
         <input type="text" [(ngModel)]="itemData" (keyup.enter)="addItem()">
         <button (click)="addItem()">ADD</button>
     </div>
+
+    <li *ngFor="let itemData of list">
+        <grocery-item (removeItemRequest)="itemRequestedRemove($event)" [item]="itemData"></grocery-item>
+    </li>
 </ul>

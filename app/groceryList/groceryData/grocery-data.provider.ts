@@ -10,7 +10,7 @@ export class GroceryDataProvider {
     }
 
     addItem(data : string) {
-        this.list.push(new Grocery(this.list.length + 1, data));
+        this.list.push(new Grocery(this.list.length + 1, data, false));
     }
 
     removeItem(id : number) {

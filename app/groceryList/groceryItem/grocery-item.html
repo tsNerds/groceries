@@ -1,1 +1,8 @@
-{{item.id}} {{item.data}} <button (click)="clickedRemove()">X</button>
+<div>
+    <input type="checkbox" [(ngModel)]="item.selected">
+
+    <span class="id">{{item.id}}</span>
+    <span class="text">{{item.data}}</span> 
+    <button (click)="clickedRemove()">X</button>
+</div>
+

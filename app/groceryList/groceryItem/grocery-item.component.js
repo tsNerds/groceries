@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var grocery_model_1 = require('../grocery.model');
 var GroceryItem = (function () {
     function GroceryItem() {
         this.removeItemRequest = new core_1.EventEmitter();
@@ -20,7 +21,7 @@ var GroceryItem = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', grocery_model_1.Grocery)
     ], GroceryItem.prototype, "item", void 0);
     __decorate([
         core_1.Output(), 
@@ -30,7 +31,8 @@ var GroceryItem = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'grocery-item',
-            templateUrl: './grocery-item.html'
+            templateUrl: './grocery-item.html',
+            styleUrls: ['./grocery-item.css']
         }), 
         __metadata('design:paramtypes', [])
     ], GroceryItem);

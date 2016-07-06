@@ -1,0 +1,30 @@
+.text {
+    position: relative;
+    width: 80%;
+    left: 5%;
+    display: inline-block;
+    border: 1px solid #c3c3c3;
+    padding: 5px;
+    font-style: italic;
+    font-family: cursive;
+    min-height: 25px;
+}
+
+.id {
+    position: absolute;
+    height: 25px;
+    display: inline-block;
+    left: 90px;
+    text-align: right;
+    width: 20px;
+    margin-top: 10px;
+}
+
+button {
+    position: absolute;
+    right: 32px;
+    height: 35px;
+    width: 35px;
+    color: #ff0000;
+    font-weight: bold;
+}

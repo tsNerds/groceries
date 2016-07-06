@@ -7,6 +7,7 @@ import { Grocery } from './grocery.model'
     moduleId: module.id,
     selector: 'grocery-list',
     templateUrl: './grocery-list.html',
+    styleUrls: ['./grocery-list.css'],
     directives: [GroceryItem]
 })
 export class GroceryList {

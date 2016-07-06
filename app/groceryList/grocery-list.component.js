@@ -41,6 +41,7 @@ var GroceryList = (function () {
             moduleId: module.id,
             selector: 'grocery-list',
             templateUrl: './grocery-list.html',
+            styleUrls: ['./grocery-list.css'],
             directives: [index_1.GroceryItem]
         }), 
         __metadata('design:paramtypes', [])

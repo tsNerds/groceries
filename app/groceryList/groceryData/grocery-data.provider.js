@@ -18,7 +18,7 @@ var GroceryDataProvider = (function () {
         return this.list;
     };
     GroceryDataProvider.prototype.addItem = function (data) {
-        this.list.push(new grocery_model_1.Grocery(this.list.length + 1, data));
+        this.list.push(new grocery_model_1.Grocery(this.list.length + 1, data, false));
     };
     GroceryDataProvider.prototype.removeItem = function (id) {
         var index = this.findItem(id);
