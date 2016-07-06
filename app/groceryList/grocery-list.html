@@ -1,3 +1,5 @@
 <ul>
-    <li *ngFor="let x of list">{{x.id}} - {{x.data}}</li>
+    <li *ngFor="let itemData of list">
+        <grocery-item [item]="itemData"></grocery-item>
+    </li>
 </ul>

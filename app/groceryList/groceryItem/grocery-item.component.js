@@ -9,26 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require('./groceryItem/index');
-var GroceryList = (function () {
-    function GroceryList() {
-        this.list = [
-            { id: 1, data: 'something1' },
-            { id: 2, data: 'something2' },
-            { id: 3, data: 'something3' },
-            { id: 4, data: 'something4' }
-        ];
+var GroceryItem = (function () {
+    function GroceryItem() {
     }
-    GroceryList = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], GroceryItem.prototype, "item", void 0);
+    GroceryItem = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'grocery-list',
-            templateUrl: './grocery-list.html',
-            directives: [index_1.GroceryItem]
+            selector: 'grocery-item',
+            template: '{{item.id}} {{item.data}}'
         }), 
         __metadata('design:paramtypes', [])
-    ], GroceryList);
-    return GroceryList;
+    ], GroceryItem);
+    return GroceryItem;
 }());
-exports.GroceryList = GroceryList;
-//# sourceMappingURL=grocery-list.component.js.map
+exports.GroceryItem = GroceryItem;
+//# sourceMappingURL=grocery-item.component.js.map

@@ -15,8 +15,9 @@ var GroceryListAppComponent = (function () {
     }
     GroceryListAppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'grocery-list-app',
-            template: "\n        <grocery-list></grocery-list>\n    ",
+            templateUrl: './grocery-list-app.html',
             directives: [grocery_list_component_1.GroceryList],
         }), 
         __metadata('design:paramtypes', [])

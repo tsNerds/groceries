@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
+import {GroceryItem} from './groceryItem/index'
+
 @Component({
     moduleId: module.id,
     selector: 'grocery-list',
-    templateUrl: './grocery-list.html'
+    templateUrl: './grocery-list.html',
+    directives: [GroceryItem]
 })
 export class GroceryList {
     private list:Array<any> = [
