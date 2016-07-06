@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var grocery_model_1 = require('../grocery.model');
 var GroceryDataProvider = (function () {
     function GroceryDataProvider() {
         this.list = [];
@@ -17,7 +18,7 @@ var GroceryDataProvider = (function () {
         return this.list;
     };
     GroceryDataProvider.prototype.addItem = function (data) {
-        this.list.push({ id: this.list.length + 1, data: data });
+        this.list.push(new grocery_model_1.Grocery(this.list.length + 1, data));
     };
     GroceryDataProvider.prototype.removeItem = function (id) {
         var index = this.findItem(id);

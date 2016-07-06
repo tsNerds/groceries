@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { GroceryList } from './groceryList/grocery-list.component'
 import { GroceryDataProvider } from './groceryList/groceryData/grocery-data.provider'
+import { Grocery } from './groceryList/grocery.model'
 
 @Component({
     moduleId: module.id,

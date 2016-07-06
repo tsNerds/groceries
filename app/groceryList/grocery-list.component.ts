@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import { GroceryItem } from './groceryItem/index'
+import { Grocery } from './grocery.model'
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,7 @@ import { GroceryItem } from './groceryItem/index'
 export class GroceryList {
     private itemData:string;
 
-    @Input() list:Array<any>;
+    @Input() list:Array<Grocery>;
     @Output() addItemRequested = new EventEmitter();
     @Output() removeItemRequested = new EventEmitter();
     
