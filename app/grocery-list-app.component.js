@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var data_component_1 = require('./data/data.component');
+var grocery_list_component_1 = require('./groceryList/grocery-list.component');
 var GroceryListAppComponent = (function () {
     function GroceryListAppComponent() {
     }
     GroceryListAppComponent = __decorate([
         core_1.Component({
             selector: 'grocery-list-app',
-            template: "\n        <data-item></data-item>\n    ",
-            directives: [data_component_1.DataItem],
+            template: "\n        <grocery-list></grocery-list>\n    ",
+            directives: [grocery_list_component_1.GroceryList],
         }), 
         __metadata('design:paramtypes', [])
     ], GroceryListAppComponent);

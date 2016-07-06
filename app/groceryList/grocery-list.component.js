@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var DataItem = (function () {
-    function DataItem() {
+var GroceryList = (function () {
+    function GroceryList() {
         this.list = [
             { id: 1, data: 'something1' },
             { id: 2, data: 'something2' },
@@ -18,14 +18,15 @@ var DataItem = (function () {
             { id: 4, data: 'something4' }
         ];
     }
-    DataItem = __decorate([
+    GroceryList = __decorate([
         core_1.Component({
-            selector: 'data-item',
-            templateUrl: 'app/data/data.html'
+            moduleId: module.id,
+            selector: 'grocery-list',
+            templateUrl: './grocery-list.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], DataItem);
-    return DataItem;
+    ], GroceryList);
+    return GroceryList;
 }());
-exports.DataItem = DataItem;
-//# sourceMappingURL=data.component.js.map
+exports.GroceryList = GroceryList;
+//# sourceMappingURL=grocery-list.component.js.map

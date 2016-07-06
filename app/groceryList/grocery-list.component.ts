@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'grocery-list',
-    templateUrl: 'app/grocery-list/grocery-list.html'
+    templateUrl: './grocery-list.html'
 })
 export class GroceryList {
     private list:Array<any> = [

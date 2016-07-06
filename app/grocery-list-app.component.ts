@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
-import { DataItem } from './data/data.component'
+import { GroceryList } from './groceryList/grocery-list.component'
 
 @Component({
     selector: 'grocery-list-app',
     template: `
-        <data-item></data-item>
+        <grocery-list></grocery-list>
     `,
-    directives: [DataItem],
+    directives: [GroceryList],
 })
 export class GroceryListAppComponent {
     
