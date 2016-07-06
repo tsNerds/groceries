@@ -18,4 +18,9 @@ export class GroceriesService {
     return this.groceries;
   }
 
+  addGrocery(groceryName:string, groceryPrice?:number):void {
+    // add the new grocery to the top of the list
+    this.groceries.splice(0, 0, new GroceryModel(groceryName, groceryPrice));
+  }
+
 }
