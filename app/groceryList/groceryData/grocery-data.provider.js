@@ -11,12 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var GroceryDataProvider = (function () {
     function GroceryDataProvider() {
-        this.list = [
-            { id: 1, data: 'something1' },
-            { id: 2, data: 'something2' },
-            { id: 3, data: 'something3' },
-            { id: 4, data: 'something4' }
-        ];
+        this.list = [];
     }
     GroceryDataProvider.prototype.getData = function () {
         return this.list;

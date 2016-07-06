@@ -4,7 +4,7 @@
     </li>
     
     <div>
-        <input type="text" [(ngModel)]="itemData">
+        <input type="text" [(ngModel)]="itemData" (keyup.enter)="addItem()">
         <button (click)="addItem()">ADD</button>
     </div>
 </ul>
