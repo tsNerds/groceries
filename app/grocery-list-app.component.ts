@@ -17,7 +17,6 @@ export class GroceryListAppComponent {
     }
 
     addItemRequested(event:any) {
-        console.log('wowow');
         this.groceryData.addItem(event.description);
     }
 

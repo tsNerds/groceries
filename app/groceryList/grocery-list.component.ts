@@ -16,7 +16,6 @@ export class GroceryList {
     @Output() removeItemRequested = new EventEmitter();
     
     addItem() {
-        console.log('add');
         this.addItemRequested.emit({
             description: this.itemData 
         });
