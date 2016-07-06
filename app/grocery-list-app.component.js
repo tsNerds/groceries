@@ -10,17 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var grocery_list_component_1 = require('./groceryList/grocery-list.component');
+var grocery_data_provider_1 = require('./groceryList/groceryData/grocery-data.provider');
 var GroceryListAppComponent = (function () {
-    function GroceryListAppComponent() {
+    function GroceryListAppComponent(groceryData) {
+        this.groceryData = groceryData;
+        this.list = groceryData.getData();
     }
+    GroceryListAppComponent.prototype.addItemRequested = function (event) {
+        console.log('wowow');
+        this.groceryData.addItem(event.description);
+    };
+    GroceryListAppComponent.prototype.removeItemRequested = function (event) {
+        this.groceryData.removeItem(event.id);
+    };
     GroceryListAppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'grocery-list-app',
             templateUrl: './grocery-list-app.html',
             directives: [grocery_list_component_1.GroceryList],
+            providers: [grocery_data_provider_1.GroceryDataProvider]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [grocery_data_provider_1.GroceryDataProvider])
     ], GroceryListAppComponent);
     return GroceryListAppComponent;
 }());

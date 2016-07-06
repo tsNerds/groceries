@@ -1,1 +1,5 @@
-<grocery-list></grocery-list>
+<grocery-list 
+    [list]="list"
+    (addItemRequested)="addItemRequested($event)" 
+    (removeItemRequested)="removeItemRequested($event)">
+</grocery-list>

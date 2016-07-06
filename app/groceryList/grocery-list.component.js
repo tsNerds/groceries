@@ -10,30 +10,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var index_1 = require('./groceryItem/index');
-var grocery_data_provider_1 = require('./groceryData/grocery-data.provider');
 var GroceryList = (function () {
-    function GroceryList(groceryData) {
-        this.groceryData = groceryData;
-        this.list = [];
-        this.list = groceryData.getData();
+    function GroceryList() {
+        this.addItemRequested = new core_1.EventEmitter();
+        this.removeItemRequested = new core_1.EventEmitter();
     }
     GroceryList.prototype.addItem = function () {
-        this.groceryData.addItem(this.itemData);
+        console.log('add');
+        this.addItemRequested.emit({
+            description: this.itemData
+        });
         this.itemData = '';
     };
     GroceryList.prototype.itemRequestedRemove = function (event) {
-        console.log(event);
-        this.groceryData.removeItem(event.id);
+        this.removeItemRequested.emit(event);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], GroceryList.prototype, "list", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], GroceryList.prototype, "addItemRequested", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], GroceryList.prototype, "removeItemRequested", void 0);
     GroceryList = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'grocery-list',
             templateUrl: './grocery-list.html',
-            directives: [index_1.GroceryItem],
-            providers: [grocery_data_provider_1.GroceryDataProvider]
+            directives: [index_1.GroceryItem]
         }), 
-        __metadata('design:paramtypes', [grocery_data_provider_1.GroceryDataProvider])
+        __metadata('design:paramtypes', [])
     ], GroceryList);
     return GroceryList;
 }());

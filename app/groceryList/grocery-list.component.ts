@@ -1,29 +1,29 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import { GroceryItem } from './groceryItem/index'
-import { GroceryDataProvider } from './groceryData/grocery-data.provider'
 
 @Component({
     moduleId: module.id,
     selector: 'grocery-list',
     templateUrl: './grocery-list.html',
-    directives: [GroceryItem],
-    providers: [GroceryDataProvider]
+    directives: [GroceryItem]
 })
 export class GroceryList {
-    private list:Array<any> = [];
     private itemData:string;
-    constructor(private groceryData:GroceryDataProvider) {
-        this.list = groceryData.getData();
-    }
 
+    @Input() list:Array<any>;
+    @Output() addItemRequested = new EventEmitter();
+    @Output() removeItemRequested = new EventEmitter();
+    
     addItem() {
-        this.groceryData.addItem(this.itemData);
+        console.log('add');
+        this.addItemRequested.emit({
+            description: this.itemData 
+        });
         this.itemData = '';
     }
 
-    itemRequestedRemove(event) {
-        console.log(event);
-        this.groceryData.removeItem(event.id);
+    itemRequestedRemove(event:any) {
+        this.removeItemRequested.emit(event);
     }
 }
