@@ -1,7 +1,7 @@
 <ul style="list-style-type:none">
     <div>
         <input type="text" [(ngModel)]="itemData" (keyup.enter)="addItem()">
-        <button (click)="addItem()">ADD</button>
+        <button (click)="clickedAddButton()">ADD</button>
     </div>
 
     <li *ngFor="let itemData of list">

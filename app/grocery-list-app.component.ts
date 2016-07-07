@@ -17,7 +17,7 @@ export class GroceryListAppComponent {
         this.list = groceryData.getData();
     }
 
-    addItemRequested(event:any) {
+    addNewItem(event:any) {
         this.groceryData.addItem(event.description);
     }
 

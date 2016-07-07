@@ -16,7 +16,7 @@ var GroceryListAppComponent = (function () {
         this.groceryData = groceryData;
         this.list = groceryData.getData();
     }
-    GroceryListAppComponent.prototype.addItemRequested = function (event) {
+    GroceryListAppComponent.prototype.addNewItem = function (event) {
         this.groceryData.addItem(event.description);
     };
     GroceryListAppComponent.prototype.removeItemRequested = function (event) {

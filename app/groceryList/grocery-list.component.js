@@ -15,7 +15,7 @@ var GroceryList = (function () {
         this.addItemRequested = new core_1.EventEmitter();
         this.removeItemRequested = new core_1.EventEmitter();
     }
-    GroceryList.prototype.addItem = function () {
+    GroceryList.prototype.clickedAddButton = function () {
         this.addItemRequested.emit({
             description: this.itemData
         });

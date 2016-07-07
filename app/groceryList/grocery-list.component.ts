@@ -17,7 +17,7 @@ export class GroceryList {
     @Output() addItemRequested = new EventEmitter();
     @Output() removeItemRequested = new EventEmitter();
     
-    addItem() {
+    clickedAddButton() {
         this.addItemRequested.emit({
             description: this.itemData 
         });
