@@ -13,7 +13,7 @@ var index_1 = require('./groceryItem/index');
 var GroceryList = (function () {
     function GroceryList() {
         this.addItemRequested = new core_1.EventEmitter();
-        this.removeItemRequested = new core_1.EventEmitter();
+        this.removeItemRequest = new core_1.EventEmitter();
         this.selectedFilter = false;
     }
     GroceryList.prototype.addItem = function () {
@@ -23,7 +23,7 @@ var GroceryList = (function () {
         this.itemData = '';
     };
     GroceryList.prototype.itemRequestedRemove = function (event) {
-        this.removeItemRequested.emit(event);
+        this.removeItemRequest.emit(event);
     };
     GroceryList.prototype.toggleFilter = function () {
         this.selectedFilter = !this.selectedFilter;
@@ -39,7 +39,7 @@ var GroceryList = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], GroceryList.prototype, "removeItemRequested", void 0);
+    ], GroceryList.prototype, "removeItemRequest", void 0);
     GroceryList = __decorate([
         core_1.Component({
             moduleId: module.id,

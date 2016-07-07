@@ -18,7 +18,6 @@ export class GroceryDataProvider {
 
         if (index >= 0) {
             this.list.splice(index, 1);
-            console.log('item removed!');
         } else {
             console.error('Could not locate item!', id);
         }

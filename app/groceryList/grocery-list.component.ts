@@ -13,8 +13,8 @@ import { Grocery } from './grocery.model'
 export class GroceryList {
     @Input() list:Array<Grocery>;
     @Output() addItemRequested = new EventEmitter();
-    @Output() removeItemRequested = new EventEmitter();
-    
+    @Output() removeItemRequest = new EventEmitter();
+    private itemData:string;
     addItem() {
         this.addItemRequested.emit({
             description: this.itemData 
@@ -23,7 +23,7 @@ export class GroceryList {
     }
 
     itemRequestedRemove(event:any) {
-        this.removeItemRequested.emit(event);
+        this.removeItemRequest.emit(event);
     }
 
     toggleFilter() {

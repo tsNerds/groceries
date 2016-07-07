@@ -1,5 +1,4 @@
 <div *ngIf="(selectedFilter && !item.selected) || (!selectedFilter)">
-    isVisible? == {{isVisible}}
     <input type="checkbox" [(ngModel)]="item.selected">
 
     <span class="id">{{item.id}}</span>
