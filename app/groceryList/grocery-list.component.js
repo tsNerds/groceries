@@ -14,6 +14,7 @@ var GroceryList = (function () {
     function GroceryList() {
         this.addItemRequested = new core_1.EventEmitter();
         this.removeItemRequested = new core_1.EventEmitter();
+        this.selectedFilter = false;
     }
     GroceryList.prototype.addItem = function () {
         this.addItemRequested.emit({
@@ -23,6 +24,9 @@ var GroceryList = (function () {
     };
     GroceryList.prototype.itemRequestedRemove = function (event) {
         this.removeItemRequested.emit(event);
+    };
+    GroceryList.prototype.toggleFilter = function () {
+        this.selectedFilter = !this.selectedFilter;
     };
     __decorate([
         core_1.Input(), 

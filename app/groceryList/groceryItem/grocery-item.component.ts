@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Grocery } from '../grocery.model';
 
 @Component({
@@ -9,12 +9,21 @@ import { Grocery } from '../grocery.model';
 })
 
 export class GroceryItem {
-    @Input() item:Grocery;
+    @Input() item: Grocery;
+    @Input() selectedFilter: boolean;
     @Output() removeItemRequest = new EventEmitter();
 
+    private isVisible: boolean = true;
     private clickedRemove() {
         this.removeItemRequest.emit({
             id: this.item.id
         });
+    }
+
+    constructor() {
+    }
+
+    ngOnInit() {
+        
     }
 }

@@ -11,8 +11,6 @@ import { Grocery } from './grocery.model'
     directives: [GroceryItem]
 })
 export class GroceryList {
-    private itemData:string;
-
     @Input() list:Array<Grocery>;
     @Output() addItemRequested = new EventEmitter();
     @Output() removeItemRequested = new EventEmitter();
@@ -27,4 +25,10 @@ export class GroceryList {
     itemRequestedRemove(event:any) {
         this.removeItemRequested.emit(event);
     }
+
+    toggleFilter() {
+        this.selectedFilter = !this.selectedFilter;
+    }
+    
+    private selectedFilter:boolean = false;
 }

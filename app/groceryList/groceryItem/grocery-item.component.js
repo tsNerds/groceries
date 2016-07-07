@@ -13,16 +13,23 @@ var grocery_model_1 = require('../grocery.model');
 var GroceryItem = (function () {
     function GroceryItem() {
         this.removeItemRequest = new core_1.EventEmitter();
+        this.isVisible = true;
     }
     GroceryItem.prototype.clickedRemove = function () {
         this.removeItemRequest.emit({
             id: this.item.id
         });
     };
+    GroceryItem.prototype.ngOnInit = function () {
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', grocery_model_1.Grocery)
     ], GroceryItem.prototype, "item", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], GroceryItem.prototype, "selectedFilter", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)

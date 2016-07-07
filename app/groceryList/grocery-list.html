@@ -1,10 +1,17 @@
+<div>
+    <input type="text" [(ngModel)]="itemData" (keyup.enter)="addItem()">
+    <button (click)="addItem()">ADD</button>
+</div>
 <ul style="list-style-type:none">
-    <div>
-        <input type="text" [(ngModel)]="itemData" (keyup.enter)="addItem()">
-        <button (click)="addItem()">ADD</button>
-    </div>
-
     <li *ngFor="let itemData of list">
-        <grocery-item (removeItemRequest)="itemRequestedRemove($event)" [item]="itemData"></grocery-item>
+        <grocery-item (removeItemRequest)="itemRequestedRemove($event)"
+                        [selectedFilter]="selectedFilter" 
+                        [item]="itemData"></grocery-item>
     </li>
 </ul>
+
+Display only pending items? 
+<button (click)="toggleFilter()">
+    <span *ngIf="!selectedFilter">Yeah</span>
+    <span *ngIf="selectedFilter">No</span>
+</button>
