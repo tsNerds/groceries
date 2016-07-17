@@ -1,6 +1,18 @@
 <md-card>
   <md-toolbar color="primary">
-    {{title}}
+    <span>{{title}}</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <button md-button color="accent" (click)="filtersEnabled = !filtersEnabled">filter groceries</button>
+    <md-toolbar-row color="secondary" *ngIf="filtersEnabled">
+      <span>Show </span>
+      <md-radio-group [(ngModel)]="currentFilter">
+        <md-radio-button selected value="">all</md-radio-button>
+        <md-radio-button value="true">selected</md-radio-button>
+        <md-radio-button value="false">unselected</md-radio-button>
+      </md-radio-group>
+    </md-toolbar-row>
   </md-toolbar>
     <md-input
       #newGrocery
@@ -9,7 +21,7 @@
       placeholder="add a new grocery">
     </md-input>
     <app-grocery-list 
-      [groceries]="groceries" 
+      [groceries]="groceries | filterByStatus: currentFilter" 
       (removeGroceryIntent)="removeGrocery($event)" 
       (toggleGroceryIntent)="toggleGrocery($event)">
     </app-grocery-list>
