@@ -21,13 +21,3 @@ li:hover .item-action:after {
     content: " delete";
     color: red;
 }
-
-.toggle-item:after {
-    content: "select ";
-    color: green;
-}
-
-.selected .toggle-item:after {
-    content: "deselect";
-    color: #ccc;
-}

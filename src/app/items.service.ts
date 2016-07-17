@@ -8,9 +8,9 @@ export class ItemsService {
   constructor() {
     this.items = [
       new ItemModel('apples'),
-      new ItemModel('beer', true),
+      new ItemModel('beer'),
       new ItemModel('bread'),
-      new ItemModel('shaworma', true),
+      new ItemModel('shaworma'),
     ];
   }
 
@@ -18,9 +18,9 @@ export class ItemsService {
     return this.items;
   }
 
-  addItem(itemName:string, selected:boolean=false):void {
+  addItem(itemName:string):void {
     // add the new Item to the top of the list
-    this.items.splice(0, 0, new ItemModel(itemName, selected));
+    this.items.splice(0, 0, new ItemModel(itemName));
   }
 
   removeItem(item:ItemModel):void {
@@ -29,9 +29,4 @@ export class ItemsService {
       this.items.splice(index, 1);
     }
   }
-  
-  toggleItemState(item:ItemModel):void {
-    item.selected = !item.selected;
-  }
-
 }

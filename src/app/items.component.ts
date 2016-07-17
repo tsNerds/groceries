@@ -28,8 +28,4 @@ export class ItemsAppComponent {
   removeItem(data : any) : void {
     this.itemsService.removeItem(data.item);
   }
-
-  toggleItem(data : any) : void {
-    this.itemsService.toggleItemState(data.item);
-  }
 }

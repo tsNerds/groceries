@@ -1,7 +1,7 @@
 export class ItemModel {
     constructor(
         public name : string, 
-        public selected? : boolean) {
+        public status : number = 0) {
 
         }
 }
