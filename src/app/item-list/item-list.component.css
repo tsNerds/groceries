@@ -4,30 +4,30 @@ li {
     list-style: none;
 }
 
-li:hover .grocery-action:after {
+li:hover .item-action:after {
     opacity: 1;
 }
 
-.grocery-action {
+.item-action {
     float: right;
 }
 
-.grocery-action:after {
+.item-action:after {
     cursor: pointer;
     opacity: .25;
 }
 
-.delete-grocery:after {
+.delete-item:after {
     content: " delete";
     color: red;
 }
 
-.toggle-grocery:after {
+.toggle-item:after {
     content: "select ";
     color: green;
 }
 
-.selected .toggle-grocery:after {
+.selected .toggle-item:after {
     content: "deselect";
     color: #ccc;
 }

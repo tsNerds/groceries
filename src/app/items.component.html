@@ -1,0 +1,12 @@
+<h1>
+  {{title}}
+</h1>
+<input 
+  #newItem 
+  (keyup.enter)="addItem(newItem.value); newItem.value='';" 
+  placeholder="🔍 Some Item you need to add?">
+<app-item-list
+  [items]="items"
+  (removeItemIntent)="removeItem($event)"
+  (toggleItemIntent)="toggleItem($event)">
+</app-item-list>

@@ -1,4 +1,4 @@
 export {environment} from './environment';
-export {GroceriesAppComponent} from './groceries.component';
-export {GroceriesService} from './groceries.service';
+export {ItemsAppComponent} from './items.component';
+export {ItemsService} from './items.service';
 

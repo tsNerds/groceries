@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let item of items" 
+      [class.selected]="item.selected">
+    <span 
+      class="item-action delete-item" 
+      (click)="removeItem(item)"></span>
+    <span 
+      class="item-action toggle-item" 
+      (click)="toggleItemState(item)"></span>
+    <app-item [item]="item"></app-item>
+  </li>
+</ul>
