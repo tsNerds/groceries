@@ -1,17 +1,5 @@
 <md-toolbar color="primary">
-<span>{{title}}</span>
-
-<!-- This fills the remaining space of the current row -->
-<span class="example-fill-remaining-space"></span>
-<button md-button color="accent" (click)="filtersEnabled = !filtersEnabled">filter groceries</button>
-<md-toolbar-row color="secondary" *ngIf="filtersEnabled">
-  <span>Show </span>
-  <md-radio-group [(ngModel)]="currentFilter">
-    <md-radio-button selected value="">all</md-radio-button>
-    <md-radio-button value="true">selected</md-radio-button>
-    <md-radio-button value="false">unselected</md-radio-button>
-  </md-radio-group>
-</md-toolbar-row>
+  <span>{{title}}</span>
 </md-toolbar>
 <md-input
   #newGrocery
@@ -20,28 +8,14 @@
   placeholder="add a new grocery">
 </md-input>
 <div class="grid">
-  <md-card class="row">
-    <h3>new items</h3>
-    <app-grocery-list 
-      [groceries]="groceries | filterByStatus: 0" 
-      (moveLeftIntent)="moveLeft($event)" 
-      (moveRightIntent)="moveRight($event)">
-    </app-grocery-list>
-  </md-card>
-  <md-card class="row">
-    <h3>in progress items</h3>
-    <app-grocery-list 
-      [groceries]="groceries | filterByStatus: 1" 
-      (moveLeftIntent)="moveLeft($event)" 
-      (moveRightIntent)="moveRight($event)">
-    </app-grocery-list>
-  </md-card>
-  <md-card class="row">
-    <h3>done items</h3>
-    <app-grocery-list 
-      [groceries]="groceries | filterByStatus: 2" 
-      (moveLeftIntent)="moveLeft($event)" 
-      (moveRightIntent)="moveRight($event)">
-    </app-grocery-list>
+  <md-card *ngFor="let column of kanbanColumns" class="row">
+    <md-card-title>{{column.title}}</md-card-title>
+    <md-card-content>
+      <app-grocery-list 
+        [groceries]="groceries | filterByStatus: column.status" 
+        (moveLeftIntent)="moveLeft($event)" 
+        (moveRightIntent)="moveRight($event)">
+      </app-grocery-list>
+    </md-card-content>
   </md-card>
 </div>

@@ -36,7 +36,6 @@ export class GroceriesService {
 
   setGroceryStaus(grocery:GroceryModel, status:number) {
     let newStatus:number = Math.min(Math.max(status, GroceryStatuses.New), GroceryStatuses.Done);
-    console.log(status, newStatus);
     grocery.status = newStatus;
   }
 }
