@@ -12,9 +12,27 @@ import { ItemListComponent } from './item-list/';
   providers: [ItemsService]
 })
 export class ItemsAppComponent {
-  public title         : string = 'My items list:';
-  public items         : ItemModel[];
-  public itemsService  : ItemsService;
+  public items          : ItemModel[];
+  public itemsService   : ItemsService;
+  public title          : string = 'My items list:';
+  public listArray      : Object[] = [
+    {
+      title:'To Do', 
+      status: 0
+    },
+    {
+      title:'Do Today', 
+      status: 1
+    },
+    {
+      title:'In progress', 
+      status: 2
+    },
+    {
+      title:'Done', 
+      status: 3
+    },
+  ];
 
   constructor(itemsService:ItemsService) {
     this.itemsService = itemsService;

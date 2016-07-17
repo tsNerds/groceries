@@ -1,8 +1,11 @@
-<ul>
-  <li *ngFor="let item of items">
-    <span 
-      class="item-action delete-item" 
-      (click)="removeItem(item)"></span>
-    <app-item [item]="item"></app-item>
-  </li>
-</ul>
+<div>
+  <h3>{{title}}</h3>
+  <ul>
+    <li *ngFor="let item of items">
+      <span 
+        class="item-action delete-item" 
+        (click)="removeItem(item)"></span>
+      <app-item [item]="item"></app-item>
+    </li>
+  </ul>
+</div>

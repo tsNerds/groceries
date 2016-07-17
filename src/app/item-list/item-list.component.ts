@@ -9,15 +9,11 @@ import { ItemComponent, ItemModel } from '../item/';
   directives: [ItemComponent]
 })
 export class ItemListComponent {
+  @Input() title : string;
   @Input() items : ItemModel[];
 
   @Output() removeItemEvent = new EventEmitter();
-
   @Output() toggleItemEvent = new EventEmitter();
-
-  constructor() {
-
-  }
 
   removeItem(item : ItemModel) : void {
     this.removeItemEvent.emit({

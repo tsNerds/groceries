@@ -5,8 +5,11 @@
   #newItem 
   (keyup.enter)="addItem(newItem.value); newItem.value='';" 
   placeholder="🔍 Some Item you need to add?">
-<app-item-list
-  [items]="items"
-  (removeItemEvent)="removeItem($event)"
-  (toggleItemEvent)="toggleItem($event)">
-</app-item-list>
+<div>
+  <app-item-list class="list" *ngFor="let list of listArray"
+        [title]="list.title"
+        [items]="items"
+        (removeItemEvent)="removeItem($event)"
+        (toggleItemEvent)="toggleItem($event)">
+  </app-item-list>
+</div>

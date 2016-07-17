@@ -1,6 +1,9 @@
+div {
+    width: 20%;
+}
+
 li {
     position: relative;
-    width: 300px;
     list-style: none;
 }
 
