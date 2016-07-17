@@ -16,19 +16,19 @@ export class GroceryListComponent {
   groceries: GroceryModel[];
 
   @Output() 
-  removeGroceryIntent = new EventEmitter();
+  moveLeftIntent = new EventEmitter();
 
   @Output() 
-  toggleGroceryIntent = new EventEmitter();
+  moveRightIntent = new EventEmitter();
 
-  removeGrocery(grocery:GroceryModel):void {
-    this.removeGroceryIntent.emit({
+  moveLeft(grocery:GroceryModel):void {
+    this.moveLeftIntent.emit({
       grocery: grocery
     });
   }
 
-  toggleGroceryState(grocery:GroceryModel):void {    
-    this.toggleGroceryIntent.emit({
+  moveRight(grocery:GroceryModel):void {    
+    this.moveRightIntent.emit({
       grocery: grocery
     });
   }

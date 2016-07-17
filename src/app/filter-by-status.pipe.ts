@@ -1,22 +1,18 @@
-import { GroceryModel } from './grocery';
+import { GroceryModel, GroceryStatuses } from './grocery';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'filterByStatus',
-   pure: false
+  pure: false
 })
 export class FilterByStatus implements PipeTransform {
 
-  transform(groceries: GroceryModel[], selectedValue?: string): GroceryModel[] {
-    console.log('selectedValue', selectedValue);
+  transform(groceries: GroceryModel[], status?: number): GroceryModel[] {
     // no filtering
-    if (!selectedValue) {
+    if (status === undefined) {
       return groceries;
     }
 
-    let boolSelectedValue:boolean = selectedValue === 'true'; 
-
-    return groceries.filter(grocery => grocery.selected == boolSelectedValue);
+    return groceries.filter(grocery => grocery.status === status);
   }
-
 }

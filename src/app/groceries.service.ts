@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GroceryModel } from './grocery/';
+import { GroceryModel, GroceryStatuses } from './grocery/';
 
 @Injectable()
 export class GroceriesService {
@@ -7,10 +7,10 @@ export class GroceriesService {
 
   constructor() {
     this.groceries = [
-      new GroceryModel('apples', 3),
-      new GroceryModel('beer', 2, true),
+      new GroceryModel('apples'),
+      new GroceryModel('beer'),
       new GroceryModel('bread'),
-      new GroceryModel('shaworma', 15, true),
+      new GroceryModel('shaworma'),
     ];
   }
 
@@ -34,4 +34,9 @@ export class GroceriesService {
     grocery.selected = !grocery.selected;
   }
 
+  setGroceryStaus(grocery:GroceryModel, status:number) {
+    let newStatus:number = Math.min(Math.max(status, GroceryStatuses.New), GroceryStatuses.Done);
+    console.log(status, newStatus);
+    grocery.status = newStatus;
+  }
 }

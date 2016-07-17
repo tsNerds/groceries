@@ -1,28 +1,47 @@
-<md-card>
-  <md-toolbar color="primary">
-    <span>{{title}}</span>
+<md-toolbar color="primary">
+<span>{{title}}</span>
 
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
-    <button md-button color="accent" (click)="filtersEnabled = !filtersEnabled">filter groceries</button>
-    <md-toolbar-row color="secondary" *ngIf="filtersEnabled">
-      <span>Show </span>
-      <md-radio-group [(ngModel)]="currentFilter">
-        <md-radio-button selected value="">all</md-radio-button>
-        <md-radio-button value="true">selected</md-radio-button>
-        <md-radio-button value="false">unselected</md-radio-button>
-      </md-radio-group>
-    </md-toolbar-row>
-  </md-toolbar>
-    <md-input
-      #newGrocery
-      name="newGrocery"
-      (keyup.enter)="addGrocery(newGrocery.value); newGrocery.value='';"
-      placeholder="add a new grocery">
-    </md-input>
+<!-- This fills the remaining space of the current row -->
+<span class="example-fill-remaining-space"></span>
+<button md-button color="accent" (click)="filtersEnabled = !filtersEnabled">filter groceries</button>
+<md-toolbar-row color="secondary" *ngIf="filtersEnabled">
+  <span>Show </span>
+  <md-radio-group [(ngModel)]="currentFilter">
+    <md-radio-button selected value="">all</md-radio-button>
+    <md-radio-button value="true">selected</md-radio-button>
+    <md-radio-button value="false">unselected</md-radio-button>
+  </md-radio-group>
+</md-toolbar-row>
+</md-toolbar>
+<md-input
+  #newGrocery
+  name="newGrocery"
+  (keyup.enter)="addGrocery(newGrocery.value); newGrocery.value='';"
+  placeholder="add a new grocery">
+</md-input>
+<div class="grid">
+  <md-card class="row">
+    <h3>new items</h3>
     <app-grocery-list 
-      [groceries]="groceries | filterByStatus: currentFilter" 
-      (removeGroceryIntent)="removeGrocery($event)" 
-      (toggleGroceryIntent)="toggleGrocery($event)">
+      [groceries]="groceries | filterByStatus: 0" 
+      (moveLeftIntent)="moveLeft($event)" 
+      (moveRightIntent)="moveRight($event)">
     </app-grocery-list>
-</md-card>
+  </md-card>
+  <md-card class="row">
+    <h3>in progress items</h3>
+    <app-grocery-list 
+      [groceries]="groceries | filterByStatus: 1" 
+      (moveLeftIntent)="moveLeft($event)" 
+      (moveRightIntent)="moveRight($event)">
+    </app-grocery-list>
+  </md-card>
+  <md-card class="row">
+    <h3>done items</h3>
+    <app-grocery-list 
+      [groceries]="groceries | filterByStatus: 2" 
+      (moveLeftIntent)="moveLeft($event)" 
+      (moveRightIntent)="moveRight($event)">
+    </app-grocery-list>
+  </md-card>
+</div>

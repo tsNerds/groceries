@@ -9,6 +9,7 @@ import { MdCard } from '@angular2-material/card';
 import { MdToolbar } from '@angular2-material/toolbar';
 import { MdUniqueSelectionDispatcher } from '@angular2-material/core';
 import { MD_RADIO_DIRECTIVES } from '@angular2-material/radio';
+// import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
 
 @Component({
   moduleId: module.id,
@@ -33,11 +34,15 @@ export class GroceriesAppComponent {
     this.groceriesService.addGrocery(groceryName);
   }
 
-  removeGrocery($event):void {
-    this.groceriesService.removeGrocery($event.grocery);
+  moveLeft($event):void {
+    let newStatus:number = $event.grocery.status - 1;
+    console.log('moveLeft', newStatus);
+    this.groceriesService.setGroceryStaus($event.grocery, newStatus);
   }
 
-  toggleGrocery($event):void {
-    this.groceriesService.toggleGroceryState($event.grocery);
+  moveRight($event):void {
+    let newStatus:number = $event.grocery.status + 1;
+    console.log('moveRight', newStatus);
+    this.groceriesService.setGroceryStaus($event.grocery, newStatus);
   }
 }

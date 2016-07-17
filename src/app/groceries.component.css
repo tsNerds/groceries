@@ -6,3 +6,12 @@ md-input {
     margin: 10px 0 0 0;
     width: 100%;
 }
+
+.grid {
+    display: flex;
+}
+
+.grid .row {
+    flex: 1 1 100%;
+    margin: 10px;
+}
