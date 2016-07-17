@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import { GroceriesService } from './groceries.service';
 import { GroceryModel } from './grocery/grocery.model';
 import { GroceryListComponent } from './grocery-list/';
+import { MdInput } from '@angular2-material/input';
+import { MdCard } from '@angular2-material/card';
+import { MdToolbar } from '@angular2-material/toolbar';
 
 @Component({
   moduleId: module.id,
   selector: 'groceries-app',
   templateUrl: 'groceries.component.html',
   styleUrls: ['groceries.component.css'],
-  directives: [GroceryListComponent],
+  directives: [GroceryListComponent, MdInput, MdCard, MdToolbar],
   providers: [GroceriesService]
 })
 export class GroceriesAppComponent {

@@ -1,12 +1,16 @@
-<h1>
-  {{title}}
-</h1>
-<input 
-  #newGrocery 
-  (keyup.enter)="addGrocery(newGrocery.value); newGrocery.value='';" 
-  placeholder="🔍 Somehting you need to get from the store?">
-<app-grocery-list 
-  [groceries]="groceries"
-  (removeGroceryIntent)="removeGrocery($event)"
-  (toggleGroceryIntent)="toggleGrocery($event)">
-</app-grocery-list>
+<md-card>
+  <md-toolbar color="primary">
+    {{title}}
+  </md-toolbar>
+    <md-input
+      #newGrocery
+      name="newGrocery"
+      (keyup.enter)="addGrocery(newGrocery.value); newGrocery.value='';"
+      placeholder="add a new grocery">
+    </md-input>
+    <app-grocery-list 
+      [groceries]="groceries" 
+      (removeGroceryIntent)="removeGrocery($event)" 
+      (toggleGroceryIntent)="toggleGrocery($event)">
+    </app-grocery-list>
+</md-card>
