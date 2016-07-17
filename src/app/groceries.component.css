@@ -1,6 +1,4 @@
-* {
-    margin: 0 auto;
-    width: 400px;
-    display: block;
-    text-align: center;
+md-input {
+    margin: 10px 0 0 0;
+    width: 100%;
 }

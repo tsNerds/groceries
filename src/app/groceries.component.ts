@@ -3,6 +3,7 @@ import { GroceriesService } from './groceries.service';
 import { GroceryModel } from './grocery/grocery.model';
 import { GroceryListComponent } from './grocery-list/';
 import { MdInput } from '@angular2-material/input';
+import { MdButton } from '@angular2-material/button';
 import { MdCard } from '@angular2-material/card';
 import { MdToolbar } from '@angular2-material/toolbar';
 
@@ -11,7 +12,7 @@ import { MdToolbar } from '@angular2-material/toolbar';
   selector: 'groceries-app',
   templateUrl: 'groceries.component.html',
   styleUrls: ['groceries.component.css'],
-  directives: [GroceryListComponent, MdInput, MdCard, MdToolbar],
+  directives: [GroceryListComponent, MdInput, MdButton, MdCard, MdToolbar],
   providers: [GroceriesService]
 })
 export class GroceriesAppComponent {
