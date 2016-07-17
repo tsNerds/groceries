@@ -1,5 +1,7 @@
 export class ItemModel {
     constructor(
-        public name:string, 
-        public selected?:boolean) {}
+        public name : string, 
+        public selected? : boolean) {
+
+        }
 }

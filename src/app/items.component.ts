@@ -12,24 +12,24 @@ import { ItemListComponent } from './item-list/';
   providers: [ItemsService]
 })
 export class ItemsAppComponent {
-  title = 'My items list:';
-  items : ItemModel[];
-  itemsService : ItemsService;
+  public title         : string = 'My items list:';
+  public items         : ItemModel[];
+  public itemsService  : ItemsService;
 
   constructor(itemsService:ItemsService) {
     this.itemsService = itemsService;
     this.items = this.itemsService.getItems();
   }
 
-  addItem(itemName:string):void {
+  addItem(itemName : string) : void {
     this.itemsService.addItem(itemName);
   }
 
-  removeItem($event):void {
-    this.itemsService.removeItem($event.item);
+  removeItem(data : any) : void {
+    this.itemsService.removeItem(data.item);
   }
 
-  toggleItem($event):void {
-    this.itemsService.toggleItemState($event.item);
+  toggleItem(data : any) : void {
+    this.itemsService.toggleItemState(data.item);
   }
 }

@@ -9,7 +9,7 @@ import { ItemComponent, ItemModel } from '../item/';
   directives: [ItemComponent]
 })
 export class ItemListComponent {
-  @Input() items: ItemModel[];
+  @Input() items : ItemModel[];
 
   @Output() removeItemEvent = new EventEmitter();
 
@@ -19,13 +19,13 @@ export class ItemListComponent {
 
   }
 
-  removeItem(item:ItemModel):void {
+  removeItem(item : ItemModel) : void {
     this.removeItemEvent.emit({
       item: item
     });
   }
 
-  toggleItemState(item:ItemModel):void {
+  toggleItemState(item : ItemModel) : void {
     this.toggleItemEvent.emit({
       item: item
     });
