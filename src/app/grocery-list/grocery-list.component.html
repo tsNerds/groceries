@@ -1,24 +1,15 @@
 <div>
-  <md-card *ngFor="let grocery of groceries" 
-      [class.selected]="grocery.selected">
+  <md-card *ngFor="let grocery of groceries" [class.selected]="grocery.selected">
     <md-card-title>
       <app-grocery [grocery]="grocery"></app-grocery>
     </md-card-title>
     <md-card-actions>
-        <button md-button (click)="toggleGroceryState(grocery)">select</button>
-        <button md-button (click)="removeGrocery(grocery)">delete</button>
+      <button md-button color="primary" (click)="toggleGroceryState(grocery)">
+        {{grocery.selected?"deselect":"select"}}
+      </button>
+      <button md-button color="warn" (click)="removeGrocery(grocery)">
+        delete
+      </button>
    </md-card-actions>
   </md-card>
 </div>
-<!--<ul>
-  <li *ngFor="let grocery of groceries" 
-      [class.selected]="grocery.selected">
-    <span 
-      class="grocery-action delete-grocery" 
-      (click)="removeGrocery(grocery)"></span>
-    <span 
-      class="grocery-action toggle-grocery" 
-      (click)="toggleGroceryState(grocery)"></span>
-    <app-grocery [grocery]="grocery"></app-grocery>
-  </li>
-</ul>-->

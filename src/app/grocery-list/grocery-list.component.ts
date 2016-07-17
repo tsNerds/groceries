@@ -27,9 +27,7 @@ export class GroceryListComponent {
     });
   }
 
-  toggleGroceryState(grocery:GroceryModel):void {
-    console.log('emit toggle');
-    
+  toggleGroceryState(grocery:GroceryModel):void {    
     this.toggleGroceryIntent.emit({
       grocery: grocery
     });
