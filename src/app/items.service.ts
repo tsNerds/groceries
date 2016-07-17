@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ItemModel } from './item/index';
+import { ItemModel } from './item/';
 
 @Injectable()
 export class ItemsService {

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ItemComponent, ItemModel } from '../item/index';
+import { ItemComponent, ItemModel } from '../item/';
 
 @Component({
   moduleId: module.id,
@@ -11,24 +11,22 @@ import { ItemComponent, ItemModel } from '../item/index';
 export class ItemListComponent {
   @Input() items: ItemModel[];
 
-  @Output() removeItemIntent = new EventEmitter();
+  @Output() removeItemEvent = new EventEmitter();
 
-  @Output() toggleItemIntent = new EventEmitter();
+  @Output() toggleItemEvent = new EventEmitter();
 
   constructor() {
 
   }
 
   removeItem(item:ItemModel):void {
-    this.removeItemIntent.emit({
+    this.removeItemEvent.emit({
       item: item
     });
   }
 
   toggleItemState(item:ItemModel):void {
-    console.log('emit toggle');
-    
-    this.toggleItemIntent.emit({
+    this.toggleItemEvent.emit({
       item: item
     });
   }

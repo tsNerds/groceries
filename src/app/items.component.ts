@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ItemsService } from './items.service';
 import { ItemModel } from './item/item.model';
-import { ItemListComponent } from './item-list/item-list.component';
+import { ItemListComponent } from './item-list/';
 
 @Component({
   moduleId: module.id,
