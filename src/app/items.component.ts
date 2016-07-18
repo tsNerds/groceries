@@ -46,4 +46,8 @@ export class ItemsAppComponent {
   removeItem(data : any) : void {
     this.itemsService.removeItem(data.item);
   }
+
+  changeItemStatus(data : any) : void {
+    this.itemsService.changeItemStatus(data.item);
+  }
 }

@@ -10,6 +10,6 @@
         [title]="list.title"
         [items]="items"
         (removeItemEvent)="removeItem($event)"
-        (toggleItemEvent)="toggleItem($event)">
+        (nextStatusEvent)="changeItemStatus($event)">
   </app-item-list>
 </div>

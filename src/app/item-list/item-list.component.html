@@ -1,11 +1,11 @@
-<div>
+<div class="list">
   <h3>{{title}}</h3>
   <ul>
     <li *ngFor="let item of items">
-      <span 
-        class="item-action delete-item" 
-        (click)="removeItem(item)"></span>
-      <app-item [item]="item"></app-item>
+      <span (click)="removeItem(item)" class="action-button">X</span>
+      <app-item [item]="item"
+                (nextStatusEvent)="nextStatusRequested($event)"
+      ></app-item>
     </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ItemModel } from './item.model';
 
 @Component({
@@ -8,12 +8,18 @@ import { ItemModel } from './item.model';
   styleUrls: ['item.component.css']
 })
 export class ItemComponent implements OnInit {
-
-  @Input() item: ItemModel;
+  @Input() item : ItemModel;
+  @Output() nextStatusEvent : EventEmitter<Object> = new EventEmitter();
   
   constructor() {}
 
   ngOnInit() {
+  }
+
+  nextStatusClicked() : void {
+    this.nextStatusEvent.emit({
+      item: this.item
+    });
   }
 
 }

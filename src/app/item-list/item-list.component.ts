@@ -13,7 +13,7 @@ export class ItemListComponent {
   @Input() items : ItemModel[];
 
   @Output() removeItemEvent = new EventEmitter();
-  @Output() toggleItemEvent = new EventEmitter();
+  @Output() nextStatusEvent = new EventEmitter();
 
   removeItem(item : ItemModel) : void {
     this.removeItemEvent.emit({
@@ -21,9 +21,7 @@ export class ItemListComponent {
     });
   }
 
-  toggleItemState(item : ItemModel) : void {
-    this.toggleItemEvent.emit({
-      item: item
-    });
+  nextStatusRequested(event) : void {
+    this.nextStatusEvent.emit(event);
   }
 }

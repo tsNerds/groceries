@@ -1,26 +1,12 @@
-div {
-    width: 20%;
+.list {
+    width: 150px;
 }
-
-li {
-    position: relative;
-    list-style: none;
-}
-
-li:hover .item-action:after {
-    opacity: 1;
-}
-
-.item-action {
-    float: right;
-}
-
-.item-action:after {
+.action-button {
     cursor: pointer;
-    opacity: .25;
+    color: #ff0000;
+    opacity: 0.6;
 }
 
-.delete-item:after {
-    content: " delete";
-    color: red;
+.action-button:hover {
+    opacity: 1;
 }
