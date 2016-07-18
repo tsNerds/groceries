@@ -18,8 +18,15 @@ export class ItemsService {
     ];
   }
 
-  getItems():ItemModel[] {
+  getItems() : ItemModel[] {
     return this.items;
+  }
+
+  getItemsOfStatus(status : number) : ItemModel[] {
+    var result = [];
+    this.items.forEach(item => result.push(item));
+
+    return result;
   }
 
   addItem(itemName : string) : void {

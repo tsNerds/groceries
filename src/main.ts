@@ -1,9 +1,11 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { ItemsAppComponent, environment } from './app/index';
+import { AppComponent, environment } from './app/index';
+
+import { appRouterProviders } from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(ItemsAppComponent);
+bootstrap(AppComponent, [appRouterProviders]);

@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ItemsService } from './items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
 
-// import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'items-app',
   templateUrl: 'items.component.html',
   styleUrls: ['items.component.css'],
-  directives: [ItemListComponent],
+  directives: [
+              ItemListComponent,
+              ROUTER_DIRECTIVES,
+              ],
   providers: [ItemsService]
 })
 export class ItemsAppComponent {
