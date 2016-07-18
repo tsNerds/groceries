@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ItemsService } from './items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -39,9 +39,23 @@ export class ItemsAppComponent {
     },
   ];
 
-  constructor(itemsService:ItemsService) {
+  constructor(private router : Router,
+              private route : ActivatedRoute,
+              itemsService : ItemsService) {
     this.itemsService = itemsService;
     this.items = this.itemsService.getItems();
+  }
+
+  ngOnInit() {
+    this.route
+          .params
+          .subscribe(params => {
+            if (params['status']) {
+              let filteredStatus = +params['status'];
+              this.listArray = [this.listArray[filteredStatus]]
+              this.items = this.itemsService.getItemsOfStatus(filteredStatus);
+            }
+          });
   }
 
   addItem(itemName : string) : void {
