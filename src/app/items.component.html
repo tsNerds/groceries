@@ -8,6 +8,7 @@
 <div>
   <app-item-list class="list" *ngFor="let list of listArray"
         [title]="list.title"
+        [filteredStatus]="list.status"
         [items]="items"
         (removeItemEvent)="removeItem($event)"
         (nextStatusEvent)="changeItemStatus($event)">

@@ -11,6 +11,7 @@ import { ItemComponent, ItemModel } from '../item/';
 export class ItemListComponent {
   @Input() title : string;
   @Input() items : ItemModel[];
+  @Input() filteredStatus : number;
 
   @Output() removeItemEvent = new EventEmitter();
   @Output() nextStatusEvent = new EventEmitter();
