@@ -3,11 +3,12 @@
   <ul>
     <div *ngFor="let item of items">
       <li *ngIf="item.status === filteredStatus">
+        <span class="change-status-button prev-status"
+              *ngIf="item.taskStarted() === true" 
+              (click)="prevStatusClicked(item)"><-</span>
+        <app-item [item]="item"></app-item>
         <span (click)="removeItemClicked(item)" class="action-button">X</span>
-        <app-item [item]="item"
-                  (nextStatusEvent)="nextStatusRequested($event)"
-        ></app-item>
-        <span class="next-status-button"
+        <span class="change-status-button next-status"
               *ngIf="item.isTaskDone() === false" 
               (click)="nextStatusClicked(item)">-></span>
       </li>

@@ -15,6 +15,7 @@ export class ItemListComponent {
 
   @Output() removeItemEvent = new EventEmitter();
   @Output() nextStatusEvent = new EventEmitter();
+  @Output() prevStatusEvent = new EventEmitter();
 
   removeItemClicked(item : ItemModel) : void {
     this.removeItemEvent.emit({
@@ -24,6 +25,12 @@ export class ItemListComponent {
 
   nextStatusClicked(item: ItemModel) : void {
     this.nextStatusEvent.emit({
+      item: item
+    });
+  }
+
+  prevStatusClicked(item: ItemModel) : void {
+    this.prevStatusEvent.emit({
       item: item
     });
   }

@@ -47,7 +47,11 @@ export class ItemsAppComponent {
     this.itemsService.removeItem(data.item);
   }
 
-  changeItemStatus(data : any) : void {
-    this.itemsService.changeItemStatus(data.item);
+  nextItemStatus(data : any) : void {
+    this.itemsService.nextItemStatus(data.item);
+  }
+
+  prevItemStatus(data : any) : void {
+    this.itemsService.prevItemStatus(data.item);
   }
 }

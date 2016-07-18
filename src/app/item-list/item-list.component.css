@@ -1,5 +1,9 @@
+li {
+    list-style-type: none;
+}
+
 .list {
-    width: 150px;
+    width: 270px;
 }
 .action-button {
     cursor: pointer;
@@ -11,8 +15,15 @@
     opacity: 1;
 }
 
-.next-status-button { 
+.change-status-button { 
     cursor: pointer;
     color: #0000ff;
+}
+
+.prev-status {
+    float: left;
+}
+
+.next-status {
     float: right;
 }

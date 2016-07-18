@@ -11,6 +11,7 @@
         [filteredStatus]="list.status"
         [items]="items"
         (removeItemEvent)="removeItem($event)"
-        (nextStatusEvent)="changeItemStatus($event)">
+        (nextStatusEvent)="nextItemStatus($event)"
+        (prevStatusEvent)="prevItemStatus($event)">
   </app-item-list>
 </div>
