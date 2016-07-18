@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ItemComponent, ItemModel } from '../item/';
 
 @Component({
@@ -16,6 +16,21 @@ export class ItemListComponent {
   @Output() removeItemEvent = new EventEmitter();
   @Output() nextStatusEvent = new EventEmitter();
   @Output() prevStatusEvent = new EventEmitter();
+
+  constructor() {
+    
+  }
+
+  getItemsCounter() : number {
+    var len : number = 0;
+    this.items.forEach(item => {
+      if (item.status === this.filteredStatus) {
+        len++;
+      }
+    });
+
+    return len;
+  }
 
   removeItemClicked(item : ItemModel) : void {
     this.removeItemEvent.emit({

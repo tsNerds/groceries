@@ -1,5 +1,5 @@
 <div class="list">
-  <h3>{{title}}</h3>
+  <h3>{{title}} ({{getItemsCounter()}})</h3>
   <ul>
     <div *ngFor="let item of items">
       <li *ngIf="item.status === filteredStatus">
