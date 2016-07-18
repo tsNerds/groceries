@@ -3,6 +3,8 @@ import { ItemsService } from './items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
 
+// import { ROUTER_DIRECTIVES } from '@angular/router';
+
 @Component({
   moduleId: module.id,
   selector: 'items-app',
