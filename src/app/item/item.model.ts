@@ -8,10 +8,18 @@ export class ItemModel {
         }
 
     public incrementStatus() : void {
-        if (this.status < MAX_STATUS) {
+        if (this.isTaskDone() === false) {
             this.status++;
         } else {
-            console.error('max status reached! How are you doing this, you hacker?');
+            console.error('Max status reached! How are you doing this, you hacker?');
         }
+    }
+
+    public isTaskDone() : boolean {
+        if (this.status < MAX_STATUS) {
+            return false;
+        }
+
+        return true;
     }
 }

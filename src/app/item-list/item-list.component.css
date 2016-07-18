@@ -10,3 +10,9 @@
 .action-button:hover {
     opacity: 1;
 }
+
+.next-status-button { 
+    cursor: pointer;
+    color: #0000ff;
+    float: right;
+}

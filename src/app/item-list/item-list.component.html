@@ -2,12 +2,15 @@
   <h3>{{title}}</h3>
   <ul>
     <div *ngFor="let item of items">
-      <div *ngIf="item.status === filteredStatus">
-        <span (click)="removeItem(item)" class="action-button">X</span>
+      <li *ngIf="item.status === filteredStatus">
+        <span (click)="removeItemClicked(item)" class="action-button">X</span>
         <app-item [item]="item"
                   (nextStatusEvent)="nextStatusRequested($event)"
         ></app-item>
-      </div>
+        <span class="next-status-button"
+              *ngIf="item.isTaskDone() === false" 
+              (click)="nextStatusClicked(item)">-></span>
+      </li>
     </div>
   </ul>
 </div>

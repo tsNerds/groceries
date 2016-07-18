@@ -16,13 +16,15 @@ export class ItemListComponent {
   @Output() removeItemEvent = new EventEmitter();
   @Output() nextStatusEvent = new EventEmitter();
 
-  removeItem(item : ItemModel) : void {
+  removeItemClicked(item : ItemModel) : void {
     this.removeItemEvent.emit({
       item: item
     });
   }
 
-  nextStatusRequested(event) : void {
-    this.nextStatusEvent.emit(event);
+  nextStatusClicked(item: ItemModel) : void {
+    this.nextStatusEvent.emit({
+      item: item
+    });
   }
 }
