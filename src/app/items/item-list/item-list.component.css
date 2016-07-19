@@ -1,29 +1,8 @@
-li {
-    list-style-type: none;
+button {
+    width: 30px;
+    min-width: 30px;
 }
 
 .list {
-    width: 270px;
-}
-.action-button {
-    cursor: pointer;
-    color: #ff0000;
-    opacity: 0.6;
-}
-
-.action-button:hover {
-    opacity: 1;
-}
-
-.change-status-button { 
-    cursor: pointer;
-    color: #0000ff;
-}
-
-.prev-status {
     float: left;
-}
-
-.next-status {
-    float: right;
 }

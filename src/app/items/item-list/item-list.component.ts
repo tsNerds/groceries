@@ -2,13 +2,19 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ItemComponent, ItemModel } from '../item/';
 
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+
 @Component({
   moduleId: module.id,
   selector: 'app-item-list',
   templateUrl: 'item-list.component.html',
   styleUrls: ['item-list.component.css'],
   directives: [ItemComponent, 
-              ROUTER_DIRECTIVES],
+              ROUTER_DIRECTIVES,
+              MD_CARD_DIRECTIVES,
+              MD_BUTTON_DIRECTIVES,
+              ],
 })
 export class ItemListComponent {
   @Input() title : string;

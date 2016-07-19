@@ -4,6 +4,7 @@ import { ItemsService } from '../items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   directives: [
               ItemListComponent,
               ROUTER_DIRECTIVES,
+              MD_INPUT_DIRECTIVES,
               ],
 
 })

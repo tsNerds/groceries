@@ -1,17 +1,17 @@
-<div class="list">
+<md-card class="list">
   <h3><a [routerLink]="filteredStatus">{{title}}</a>({{getItemsCounter()}})</h3>
-  <ul>
     <div *ngFor="let item of items">
-      <li *ngIf="item.status === filteredStatus">
-        <span class="change-status-button prev-status"
+      <md-card *ngIf="item.status === filteredStatus">
+          <app-item [item]="item"></app-item>  
+        <md-card-actions>
+          <button md-raised-button color="primary"
               *ngIf="item.taskStarted() === true" 
-              (click)="prevStatusClicked(item)"><-</span>
-        <app-item [item]="item"></app-item>
-        <span (click)="removeItemClicked(item)" class="action-button">X</span>
-        <span class="change-status-button next-status"
-              *ngIf="item.isTaskDone() === false" 
-              (click)="nextStatusClicked(item)">-></span>
-      </li>
+              (click)="prevStatusClicked(item)"><-</button>
+          <button md-raised-button color="primary" (click)="removeItemClicked(item)">X</button>
+          <button md-raised-button color="primary"
+                *ngIf="item.isTaskDone() === false" 
+                (click)="nextStatusClicked(item)">-></button>
+        </md-card-actions>
+      </md-card>
     </div>
-  </ul>
-</div>
+</md-card>
