@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { ItemsService } from './items.service';
+import { ItemsService } from '../items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
               ItemListComponent,
               ROUTER_DIRECTIVES,
               ],
-  providers: [ItemsService]
+
 })
 export class ItemsAppComponent {
   public items          : ItemModel[];

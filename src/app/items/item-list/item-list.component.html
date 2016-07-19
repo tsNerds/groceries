@@ -1,7 +1,7 @@
 <div class="list">
-  <h3>{{title}} ({{getItemsCounter()}})</h3>
+  <h3><a [routerLink]="filteredStatus">{{title}}</a>({{getItemsCounter()}})</h3>
   <ul>
-    <div *ngFor="let item of getItems()">
+    <div *ngFor="let item of items">
       <li *ngIf="item.status === filteredStatus">
         <span class="change-status-button prev-status"
               *ngIf="item.taskStarted() === true" 

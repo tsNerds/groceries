@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ItemModel } from './item/';
+import { ItemModel } from './items/item/';
 
 @Injectable()
 export class ItemsService {
   public items : ItemModel[];
 
   constructor() {
+    console.log('ctr');
     this.items = [
       new ItemModel('Rename files & components'),
       new ItemModel('Remove price & state'),
