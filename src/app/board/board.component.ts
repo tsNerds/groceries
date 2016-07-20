@@ -3,17 +3,15 @@ import { ItemsService } from './items.service';
 import { ItemModel } from './item/item.model';
 import { ItemListComponent } from './item-list/';
 
-// import { ROUTER_DIRECTIVES } from '@angular/router';
-
 @Component({
   moduleId: module.id,
-  selector: 'items-app',
-  templateUrl: 'items.component.html',
-  styleUrls: ['items.component.css'],
+  selector: 'board',
+  templateUrl: 'board.component.html',
+  styleUrls: ['board.component.css'],
   directives: [ItemListComponent],
   providers: [ItemsService]
 })
-export class ItemsAppComponent {
+export class BoardComponent {
   public items          : ItemModel[];
   public itemsService   : ItemsService;
   public title          : string = 'My items list:';
